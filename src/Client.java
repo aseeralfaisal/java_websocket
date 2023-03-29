@@ -9,8 +9,9 @@ public class Client {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String str = "", str2 = "";
-        while (!str.equals("exit")) {
+        while (s.isConnected()) {
             str = br.readLine();
+            System.out.println("Client: " + str);
             dout.writeUTF(str);
             dout.flush();
             str2 = din.readUTF();
